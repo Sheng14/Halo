@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "S首页",
+  "usingComponents": {
+    "v-swiper": "/components/swiper/swiper",
+    "v-category": "/components/category/category"
+  }
 }

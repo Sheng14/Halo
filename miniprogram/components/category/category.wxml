@@ -1,0 +1,4 @@
+<view class="container">
+      <image src="{{categoryList.img}}" class="image"></image>
+      <text class="title">{{categoryList.name}}</text>
+</view>

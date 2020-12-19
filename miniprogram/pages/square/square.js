@@ -1,36 +1,11 @@
-// miniprogram/pages/index/index.js
+// miniprogram/pages/square/square.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    categoryList: [ // 传给目录组件生成一个个目录
-      {
-        name: "HTML",
-        img: "../../images/html.png"
-      },
-      {
-        name: "CSS",
-        img: "../../images/CSS.png"
-      },
-      {
-        name: "JS",
-        img: "../../images/js.png"
-      },
-      {
-        name: "Vue",
-        img: "../../images/vuejs.png"
-      },
-      {
-        name: "React",
-        img: "../../images/React.png"
-      },
-      {
-        name: "计算机基础",
-        img: "../../images/computer.png"
-      }
-    ]
+
   },
 
   /**

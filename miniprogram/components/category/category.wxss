@@ -1,0 +1,16 @@
+.container {
+  width: 373rpx;
+  height: 220rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #dbdbdb;
+  border-right: 1px solid #e6e6e6;
+  color:#8a8a8a;
+}
+.image {
+  width: 50%;
+  height: 70%
+}
