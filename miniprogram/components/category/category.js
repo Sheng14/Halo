@@ -19,6 +19,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    toSubjectList() { // 负责获取当前目录名称并且跳转到对应的试题列表
+      wx.navigateTo({
+        url: `/pages/subjectList/subjectList?categoryName=${this.properties.categoryList.name}`,
+      })
+    }
   }
 })

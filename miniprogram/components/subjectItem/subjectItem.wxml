@@ -1,0 +1,16 @@
+<view class="total">
+
+  <view>
+    <text>{{subjectItem.title}}</text>
+  </view>
+
+  <view class="bottomBar">
+    <view class="category">
+      <text>{{subjectItem.categoryName}}</text>
+    </view>
+    <view class="collect">
+      <image src="{{isCollect ? collected : collect}}" class="collectImage"></image>
+    </view>
+  </view>
+
+</view>

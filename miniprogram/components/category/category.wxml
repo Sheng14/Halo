@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" bindtap="toSubjectList">
       <image src="{{categoryList.img}}" class="image"></image>
       <text class="title">{{categoryList.name}}</text>
 </view>
