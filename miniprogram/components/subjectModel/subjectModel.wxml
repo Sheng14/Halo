@@ -1,0 +1,15 @@
+<view wx:if="{{isShowModel}}" class="total" bindtap="closeModel">
+  
+  <view class="main">
+    <view class="title">
+      <text>{{subjectItem.title}}</text>
+    </view>
+    <view class="control" catchtap="controlAnswer">
+      <text>{{showAnswer ? '关闭/隐藏答案和讨论' : '打开/显示答案和讨论'}}</text>
+    </view>
+    <view class="answer">
+      <text wx:if="{{showAnswer}}">{{subjectItem.answer}}</text>
+    </view>
+  </view>
+
+</view>
