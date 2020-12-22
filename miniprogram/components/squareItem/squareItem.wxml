@@ -1,0 +1,26 @@
+<view class="total">
+  <view class="top">
+    <view class="avatarUrl">
+      <image src="{{squareItem.avatarUrl}}"></image>
+    </view>
+    <view class="nameAndTime">
+      <view class="nickName">{{squareItem.nickName}}</view>
+      <view class="time">{{squareItem.createdTime}}</view>
+    </view> 
+  </view>
+
+  <view class="middle">
+    <view>{{squareItem.content}}</view>
+  </view>
+
+  <view class="bottom">
+    <view class="comment">
+      <image src="../../images/comment.png" class="commentImg"></image>
+      <view class="commentText">评论</view>
+    </view>
+    <view class="share">
+      <image src="../../images/share.png" class="shareImg"></image> 
+      <view class="shareText">分享</view>
+    </view>
+  </view>
+</view>

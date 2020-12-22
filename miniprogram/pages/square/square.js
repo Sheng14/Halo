@@ -5,7 +5,96 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    squareList: [
+      {
+        avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+        nickName: '玛维',
+        createdTime: '2020-12-22',
+        content: '前端是否有前途？',
+        comments: [
+          {
+            avatarUrl: 'http://img2.ali213.net/picfile/News/2015/10/24/584_2015102415017792.jpg',
+            nickName: '勇士',
+            createdTime: '2020-12-23',
+            content: '有'
+          }
+        ]
+      },
+      {
+        avatarUrl: 'http://img2.ali213.net/picfile/News/2015/10/24/584_2015102415017792.jpg',
+        nickName: '勇士',
+        createdTime: '2020-12-21',
+        content: '后端Java是否有前途？',
+        comments: [
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '玛维',
+            createdTime: '2020-12-22',
+            content: '有'
+          }
+        ]
+      },
+      {
+        avatarUrl: 'http://img2.ali213.net/picfile/News/2015/10/24/584_2015102415007299.jpg',
+        nickName: '士官长',
+        createdTime: '2020-12-20',
+        content: '能量护盾已充满',
+        comments: [
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '玛维',
+            createdTime: '2020-12-21',
+            content: '可'
+          }
+        ]
+      },
+      {
+        avatarUrl: 'http://img2.ali213.net/picfile/News/2015/10/24/584_2015102415008413.jpg',
+        nickName: '神风烈士',
+        createdTime: '2020-12-19',
+        content: '手撕二代目超级战士',
+        comments: [
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '玛维',
+            createdTime: '2020-12-20',
+            content: '确实'
+          }
+        ]
+      },
+      {
+        avatarUrl: 'http://i0.hdslb.com/bfs/face/6d521ca622282a2759dfcbc4a3823fe7edfe0397.jpg',
+        nickName: '星界军',
+        createdTime: '2020-12-19',
+        content: '我们的目标是星辰大海！',
+        comments: [
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '星界军小兵1号',
+            createdTime: '2020-12-20',
+            content: '为了帝皇！无限忠诚！'
+          },
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '星界军小兵2号',
+            createdTime: '2020-12-20',
+            content: '为了帝皇！无限忠诚！'
+          },
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '星界军小兵3号',
+            createdTime: '2020-12-20',
+            content: '为了帝皇！无限忠诚！'
+          },
+          {
+            avatarUrl: 'http://www.sinaimg.cn/dy/slidenews/21_img/2016_20/1604_5048043_202367.jpg',
+            nickName: '星界军小兵4号',
+            createdTime: '2020-12-20',
+            content: '为了帝皇！无限忠诚！'
+          },
+        ]
+      },
+    ]
   },
 
   /**

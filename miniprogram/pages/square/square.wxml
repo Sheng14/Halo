@@ -1,2 +1,5 @@
-<!--miniprogram/pages/square/square.wxml-->
-<text>miniprogram/pages/square/square.wxml</text>
+<view>
+  <view wx:for="{{squareList}}" wx:key="createdTime">
+    <v-squareItem squareItem="{{item}}"/>
+  </view>
+</view>
