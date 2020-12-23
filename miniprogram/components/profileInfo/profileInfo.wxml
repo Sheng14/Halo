@@ -1,0 +1,6 @@
+<view class="total">
+  <view class="avatar-url">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <open-data type="userNickName" class="nickname"></open-data>
+</view>

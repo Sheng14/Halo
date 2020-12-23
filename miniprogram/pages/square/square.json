@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "G广场",
   "usingComponents": {
-    "v-squareItem": "/components/squareItem/squareItem"
+    "v-squareItem": "/components/squareItem/squareItem",
+    "v-search": "/components/search/search"
   }
 }

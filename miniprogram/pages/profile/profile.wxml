@@ -1,2 +1,6 @@
-<!--miniprogram/pages/profile/profile.wxml-->
-<text>miniprogram/pages/profile/profile.wxml</text>
+<view>
+  <view>
+    <v-profileInfo />
+  </view>
+
+</view>

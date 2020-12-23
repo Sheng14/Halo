@@ -8,6 +8,7 @@
   flex-direction: column;
   margin-top: 20rpx;
   margin-left: 10rpx;
+  padding: 0 20rpx;
 }
 .top {
   height: 50px;

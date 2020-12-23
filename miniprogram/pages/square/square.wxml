@@ -1,5 +1,8 @@
 <view>
-  <view wx:for="{{squareList}}" wx:key="createdTime">
+  <view class="search">
+    <v-search />
+  </view>
+  <view wx:for="{{squareList}}" wx:key="createdTime" class="squareItem">
     <v-squareItem squareItem="{{item}}"/>
   </view>
 </view>
