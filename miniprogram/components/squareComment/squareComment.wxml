@@ -1,0 +1,19 @@
+<view class="total">  
+    <view class="title">
+      评论列表
+    </view>
+
+    <view wx:for="{{squareItem}}" wx:key="avatarUrl" class="item">
+      <view class="topBar">
+        <image src="{{item.avatarUrl}}" class="image"></image>
+        <text>{{item.nickName}}</text>
+      </view>
+      <view class="middle">
+        <text>{{item.content}}</text>
+      </view>
+      <view class="bottom">
+        <text>{{item.createdTime}}</text>
+      </view>
+    </view>
+    
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-squareComment": "/components/squareComment/squareComment",
+    "v-squareItem": "/components/squareItem/squareItem"
+  }
+}

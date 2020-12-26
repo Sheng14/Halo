@@ -2,5 +2,7 @@
   <view>
     <v-profileInfo />
   </view>
-
+  <view>
+    <v-profileAction />
+  </view>
 </view>

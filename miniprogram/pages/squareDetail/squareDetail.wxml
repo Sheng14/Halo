@@ -1,0 +1,9 @@
+<view>
+  <view class="detail">
+    <v-squareItem squareItem="{{detailList}}" />
+  </view>
+
+  <view class="list">
+    <v-squareComment squareItem="{{detailList.comments}}" />
+  </view>
+</view>

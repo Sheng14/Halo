@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "W我的",
   "usingComponents": {
-    "v-profileInfo": "/components/profileInfo/profileInfo"
+    "v-profileInfo": "/components/profileInfo/profileInfo",
+    "v-profileAction": "/components/profileAction/profileAction"
   }
 }

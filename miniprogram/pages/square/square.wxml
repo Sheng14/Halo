@@ -2,7 +2,7 @@
   <view class="search">
     <v-search />
   </view>
-  <view wx:for="{{squareList}}" wx:key="createdTime" class="squareItem">
+  <view wx:for="{{squareList}}" wx:key="createdTime" class="squareItem" data-item="{{item}}" bindtap="goDetail">
     <v-squareItem squareItem="{{item}}"/>
   </view>
 </view>

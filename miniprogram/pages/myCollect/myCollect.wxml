@@ -1,0 +1,5 @@
+<view>
+  <view wx:for="{{collectList}}" wx:key="categoryName">
+    <v-subjectItem subjectItem="{{item}}" />
+  </view>  
+</view>

@@ -1,0 +1,5 @@
+<view>
+  <view wx:for="{{issueList}}" wx:key="createdTime" class="squareItem">
+    <v-squareItem squareItem="{{item}}"/>
+  </view>
+</view>

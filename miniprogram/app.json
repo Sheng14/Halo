@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/square/square",
     "pages/profile/profile",
-    "pages/subjectList/subjectList"
+    "pages/subjectList/subjectList",
+    "pages/myCollect/myCollect",
+    "pages/myIssue/myIssue",
+    "pages/myComment/myComment",
+    "pages/squareDetail/squareDetail"
   ],
   "window": {
     "backgroundColor": "#cdcdcd",
