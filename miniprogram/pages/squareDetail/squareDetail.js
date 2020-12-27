@@ -36,9 +36,20 @@ Page({
           content: '为了帝皇！无限忠诚！'
         },
       ]
-    }
+    },
+    showComment: false,
+    showLogin: false
   },
-
+  showComment () { // 接收子组件传来的评论自定义事件
+    this.setData({
+      showComment: true
+    })
+  },
+  showLogin () { // 接收子组件传来的登录自定义事件
+    this.setData({
+      showLogin: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

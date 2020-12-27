@@ -24,7 +24,7 @@
   position: relative;
   margin-right: 20rpx;
 }
-.search input {
+.searchInput {
   height: 80%;
   width: 90%;
   margin-top: 10rpx;
@@ -51,4 +51,5 @@
   background-color: #1296db;
   border-radius: 3%;
   color: #fff;
+  text-align: center;
 }

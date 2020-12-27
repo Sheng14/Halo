@@ -22,7 +22,7 @@
   width: 30px;
   height: 30px;
 }
-.avatarUrl image {
+.avatarImg {
   width: 100%;
   height: 100%;
   border-radius: 50%;

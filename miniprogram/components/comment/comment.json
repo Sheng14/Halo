@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "v-button": "/components/button-model/button-model"
+  }
+}

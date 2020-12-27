@@ -94,13 +94,33 @@ Page({
           },
         ]
       },
-    ]
+    ],
+    showComment: false,
+    showLogin: false
   },
   goDetail (e) { // 跳转到试题的详情页同时把数据传过去（后面理应是传id去请求数据）
     const detail = e.currentTarget.dataset.item
     wx.navigateTo({
       url: `/pages/squareDetail/squareDetail?item=${detail.nickName}`
     })
+  },
+  showComment () { // 接收子组件传来的评论自定义事件
+    this.setData({
+      showComment: true
+    })
+  },
+  showLogin () { // 接收子组件传来的登录自定义事件
+    this.setData({
+      showLogin: true
+    })
+  },
+  onLoginSuccess (e) {
+    console.log('success')
+    console.log(e)
+  },
+  onLoginFail (e) {
+    console.log('fail')
+    console.log(e)
   },
   /**
    * 生命周期函数--监听页面加载

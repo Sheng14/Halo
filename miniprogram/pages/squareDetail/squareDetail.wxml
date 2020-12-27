@@ -1,9 +1,14 @@
 <view>
   <view class="detail">
-    <v-squareItem squareItem="{{detailList}}" />
+    <v-squareItem squareItem="{{detailList}}"  bind:showComment="showComment" bind:showLogin="showLogin" />
   </view>
 
   <view class="list">
-    <v-squareComment squareItem="{{detailList.comments}}" />
+    <v-squareComment squareItem="{{detailList.comments}}"/>
   </view>
+</view>
+
+<view>
+  <v-comment modalShow="{{showComment}}"></v-comment>
+  <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>

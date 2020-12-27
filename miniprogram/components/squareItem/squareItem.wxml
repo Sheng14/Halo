@@ -1,7 +1,7 @@
 <view class="total">
   <view class="top">
     <view class="avatarUrl">
-      <image src="{{squareItem.avatarUrl}}"></image>
+      <image src="{{squareItem.avatarUrl}}" class="avatarImg"></image>
     </view>
     <view class="nameAndTime">
       <view class="nickName">{{squareItem.nickName}}</view>
@@ -14,13 +14,20 @@
   </view>
 
   <view class="bottom">
-    <view class="comment">
+    <view class="comment" catchtap="comment">
       <image src="../../images/comment.png" class="commentImg"></image>
       <view class="commentText">评论</view>
     </view>
-    <view class="share">
+    <view class="share" catchtap="share">
       <image src="../../images/share.png" class="shareImg"></image> 
       <view class="shareText">分享</view>
     </view>
   </view>
 </view>
+
+<!--
+<view>
+  <v-comment modalShow="{{showComment}}"></v-comment>
+  <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
+</view>
+-->

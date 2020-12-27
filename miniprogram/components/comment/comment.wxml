@@ -1,0 +1,7 @@
+<v-button modalShow="{{modalShow}}">
+
+<form slot="modal-content" report-submit="true" bind:submit="onSend">
+  <textarea name="content" class="comment-content" placeholder="写评论" value="{{content}}" fixed="true"></textarea>
+  <button class="send" form-type="submit">发送</button>
+</form>
+</v-button>

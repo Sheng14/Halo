@@ -27,6 +27,7 @@ Component({
       this.setData({
         showModel: true
       })
+      console.log(1)
     }
   }
 })

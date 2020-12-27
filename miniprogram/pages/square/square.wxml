@@ -3,6 +3,11 @@
     <v-search />
   </view>
   <view wx:for="{{squareList}}" wx:key="createdTime" class="squareItem" data-item="{{item}}" bindtap="goDetail">
-    <v-squareItem squareItem="{{item}}"/>
+    <v-squareItem squareItem="{{item}}" bind:showComment="showComment" bind:showLogin="showLogin" />
   </view>
+</view>
+
+<view>
+  <v-comment modalShow="{{showComment}}"></v-comment>
+  <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>
