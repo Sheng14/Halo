@@ -1,5 +1,9 @@
 <view>
   <view wx:for="{{subjectList}}" wx:key="categoryName">
-    <v-subjectItem subjectItem="{{item}}" />
+    <v-subjectItem subjectItem="{{item}}" bind:changeCollect="changeCollect" />
   </view>
+</view>
+
+<view>
+  <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>

@@ -38,16 +38,38 @@ Page({
       ]
     },
     showComment: false,
-    showLogin: false
+    showLogin: false,
+    userInfo: ''
   },
   showComment () { // 接收子组件传来的评论自定义事件
+    wx.getSetting({ // 判断授权与否
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: (res) => { // 授权成功时执行收藏逻辑
+             this.setData({
+               userInfo: res.userInfo,
+               showComment: true
+             })
+            }
+          })
+        } else { // 未授权时
+          this.setData({
+            showLogin: true
+          })
+        }
+      }
+    }) 
+  },
+  onLoginSuccess (e) { // 登录成功关闭弹框
     this.setData({
-      showComment: true
+      showLogin: false
     })
   },
-  showLogin () { // 接收子组件传来的登录自定义事件
-    this.setData({
-      showLogin: true
+  onLoginFail (e) { // 登录失败弹出提示框
+    wx.showModal({
+      title: '提示',
+      content: '必须登录才能评论'
     })
   },
   /**

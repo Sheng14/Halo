@@ -8,7 +8,7 @@
     <view class="category">
       <text>{{subjectItem.categoryName}}</text>
     </view>
-    <view class="collect">
+    <view class="collect" catchtap="collect">
       <image src="{{isCollect ? collected : collect}}" class="collectImage"></image>
     </view>
   </view>
@@ -17,4 +17,8 @@
 
 <view>
   <v-subjectModel showModel="{{showModel}}" subjectItem="{{subjectItem}}" />
+</view>
+
+<view>
+  <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>

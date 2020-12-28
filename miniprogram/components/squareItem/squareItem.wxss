@@ -1,12 +1,12 @@
 .total {
-  width: 100%;
+  width: 105%;
   height: 350rpx;
   background-color: #fff;
   border: 1px solid #fff;
   border-radius: 2%;
   display: flex;
   flex-direction: column;
-  margin-top: 20rpx;
+  margin-top: 40rpx;
   margin-left: 10rpx;
   padding: 0 20rpx;
 }
@@ -48,19 +48,30 @@
   flex-direction: row;
   justify-content: space-around;
 }
-.comment, .share {
+.comment {
   line-height: 130rpx;
   display: flex;
   justify-content: space-around;
 }
-.commentImg, .shareImg {
+.commentImg {
   width: 30px;
   height: 30px;
   margin-top: 25rpx;
 }
-.commentText, .shareText {
+.commentText {
   color: #7d7d7d;
   font-weight: bold;
   font-size: 32rpx;
   margin-top: -10rpx;
+  margin-left: 10rpx;
+}
+.shareButton {
+  background-color: #fff;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+}
+.shareImg {
+  width: 30px;
+  height: 30px;
+  margin-top: 10rpx;
 }

@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "试题列表",
   "usingComponents": {
-    "v-subjectItem": "/components/subjectItem/subjectItem"
+    "v-subjectItem": "/components/subjectItem/subjectItem",
+    "v-login": "/components/login/login"
   }
 }

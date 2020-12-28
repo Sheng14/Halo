@@ -20,11 +20,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    comment () { // 暴露评论和校验登录给父组件
+    comment () { // 暴露评论和分享给父组件
       this.triggerEvent('showComment')
     },
     share () {
-      this.triggerEvent('showLogin')
+      this.triggerEvent('showShare')
     }
   }
 })

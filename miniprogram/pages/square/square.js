@@ -96,7 +96,8 @@ Page({
       },
     ],
     showComment: false,
-    showLogin: false
+    showLogin: false,
+    userInfo: ''
   },
   goDetail (e) { // 跳转到试题的详情页同时把数据传过去（后面理应是传id去请求数据）
     const detail = e.currentTarget.dataset.item
@@ -105,22 +106,35 @@ Page({
     })
   },
   showComment () { // 接收子组件传来的评论自定义事件
-    this.setData({
-      showComment: true
+    wx.getSetting({ // 判断授权与否
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: (res) => { // 授权成功时执行评论逻辑
+             this.setData({
+               userInfo: res.userInfo,
+               showComment: true
+             })
+            }
+          })
+        } else { // 未授权时
+          this.setData({
+            showLogin: true
+          })
+        }
+      }
     })
   },
-  showLogin () { // 接收子组件传来的登录自定义事件
+  onLoginSuccess (e) { // 登录成功关闭弹框
     this.setData({
-      showLogin: true
+      showLogin: false
     })
   },
-  onLoginSuccess (e) {
-    console.log('success')
-    console.log(e)
-  },
-  onLoginFail (e) {
-    console.log('fail')
-    console.log(e)
+  onLoginFail (e) { // 登录失败弹出提示框
+    wx.showModal({
+      title: '提示',
+      content: '必须登录才能评论'
+    })
   },
   /**
    * 生命周期函数--监听页面加载

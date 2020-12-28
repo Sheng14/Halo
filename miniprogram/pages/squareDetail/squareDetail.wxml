@@ -1,6 +1,6 @@
 <view>
   <view class="detail">
-    <v-squareItem squareItem="{{detailList}}"  bind:showComment="showComment" bind:showLogin="showLogin" />
+    <v-squareItem squareItem="{{detailList}}"  bind:showComment="showComment"/>
   </view>
 
   <view class="list">

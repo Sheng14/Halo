@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "v-subjectModel": "/components/subjectModel/subjectModel"
+    "v-subjectModel": "/components/subjectModel/subjectModel",
+    "v-login": "/components/login/login"
   }
 }

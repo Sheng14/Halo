@@ -11,3 +11,7 @@
     <view class="right">></view>
   </view>
 </view>
+
+<view>
+  <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
+</view>

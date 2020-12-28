@@ -6,6 +6,8 @@ Page({
    */
   data: {
     categoryName: '', // 当前列表所在的目录名称
+    showLogin: false, // 是否展示授权框
+    userInfo: '', // 当前登录用户的信息
     subjectList: [
       {
         categoryName: 'HTML',
@@ -45,7 +47,6 @@ Page({
       }
     ]
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
