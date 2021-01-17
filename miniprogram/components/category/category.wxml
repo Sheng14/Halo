@@ -1,4 +1,4 @@
 <view class="container" bindtap="toSubjectList">
-      <image src="{{categoryList.img}}" class="image"></image>
-      <text class="title">{{categoryList.name}}</text>
+      <image src="{{categoryList._field}}" class="image"></image>
+      <text class="title">{{categoryList.categoryType}}</text>
 </view>

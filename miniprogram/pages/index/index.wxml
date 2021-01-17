@@ -2,7 +2,7 @@
   <view class="topBar">
     <v-swiper></v-swiper>
     <view class="title">
-      <text>给你主宰自己的力量</text>
+      <text>{{sentence}}</text>
     </view>
   </view>
 

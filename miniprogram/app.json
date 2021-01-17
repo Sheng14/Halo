@@ -7,7 +7,8 @@
     "pages/myCollect/myCollect",
     "pages/myIssue/myIssue",
     "pages/myComment/myComment",
-    "pages/squareDetail/squareDetail"
+    "pages/squareDetail/squareDetail",
+    "router/index.js"
   ],
   "window": {
     "backgroundColor": "#cdcdcd",
