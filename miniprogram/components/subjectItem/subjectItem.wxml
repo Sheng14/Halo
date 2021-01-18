@@ -1,12 +1,12 @@
 <view class="total" bindtap="showDetail">
 
-  <view>
+  <view class="title">
     <text>{{subjectItem.title}}</text>
   </view>
 
   <view class="bottomBar">
     <view class="category">
-      <text>{{subjectItem.categoryName}}</text>
+      <text>{{subjectItem.categoryType}}</text>
     </view>
     <view class="collect" catchtap="collect">
       <image src="{{isCollect ? collected : collect}}" class="collectImage"></image>

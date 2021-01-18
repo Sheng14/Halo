@@ -8,44 +8,7 @@ Page({
     categoryName: '', // 当前列表所在的目录名称
     showLogin: false, // 是否展示授权框
     userInfo: '', // 当前登录用户的信息
-    subjectList: [
-      {
-        categoryName: 'HTML',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: 'CSS',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: 'Javascript',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: 'Vue',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: 'React',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: '计算机基础',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      }
-    ]
+    subjectList: [],
   },
   /**
    * 生命周期函数--监听页面加载
@@ -54,8 +17,30 @@ Page({
     this.setData({ // 获取当前目录名称并且给目录名称赋值
       categoryName: options.categoryName
     })
+    this._getSubjectList(options.categoryName)
   },
-
+  _getSubjectList (type) { // 获取对应类型的试题列表
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'subjectList',
+      data: {
+        $url: 'getSubjectList',
+        categoryType: type
+      }
+    })
+    .then((res) => {
+      console.log(res)
+      this.setData({
+        subjectList: res.result.data
+      })
+      wx.hideLoading()
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

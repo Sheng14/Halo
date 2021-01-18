@@ -12,16 +12,20 @@
   letter-spacing: 3px;
   text-align: center;
 }
+.title {
+  height: 100rpx;
+}
 .bottomBar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   letter-spacing: 0px;
+  height: 50rpx;
 }
 .category {
   width: 70px;
   height: 25px;
-  margin-top: 40rpx;
+  margin-top: 50rpx;
   margin-left: 20rpx;
   background-color: #1296db;
   color: #fff;
@@ -32,7 +36,7 @@
 .collect {
   width: 50px;
   height: 50px;
-  margin-top: 40rpx;
+  margin-top: 50rpx;
 }
 .collectImage {
   width: 50%;
