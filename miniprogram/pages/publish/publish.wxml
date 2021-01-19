@@ -1,0 +1,10 @@
+<view class="content">
+  <textarea class="content" placeholder="书写你的想法..." bindinput="onInput" maxlength="40" auto-focus="true" bindfocus="onFocus" bindblur="onBlur"></textarea>
+</view>
+
+<view class="footer" style="bottom:{{footerBottom}}px">
+  <view>{{wordNum}}</view>
+  <view class="publish" bindtap="publish">
+    <text>发布</text>
+  </view>
+</view>

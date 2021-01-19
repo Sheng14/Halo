@@ -46,6 +46,7 @@ Component({
                this.setData({
                  userInfo: res.userInfo
                })
+               console.log(this.data.userInfo)
                this._go(action)
               }
             })

@@ -9,6 +9,6 @@
 </view>
 
 <view>
-  <v-comment modalShow="{{showComment}}"></v-comment>
+  <v-comment modalShow="{{showComment}}" bind:send="send"></v-comment>
   <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>

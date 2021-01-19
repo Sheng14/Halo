@@ -5,32 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    collectList: [
-      {
-        categoryName: 'HTML',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: 'Javascript',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: 'Vue',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      },
-      {
-        categoryName: '计算机基础',
-        title: '测试题目测试题目测试题目测试题目测试题目测试题目测试题目测试题目',
-        content: '具体内容',
-        answer: '题目答案'
-      }
-    ]
+    collectList: []
   },
 
   /**
@@ -39,7 +14,6 @@ Page({
   onLoad: function (options) {
 
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -79,7 +53,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**

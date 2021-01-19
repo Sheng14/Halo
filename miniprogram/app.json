@@ -8,7 +8,8 @@
     "pages/myIssue/myIssue",
     "pages/myComment/myComment",
     "pages/squareDetail/squareDetail",
-    "router/index.js"
+    "router/index.js",
+    "pages/publish/publish"
   ],
   "window": {
     "backgroundColor": "#cdcdcd",

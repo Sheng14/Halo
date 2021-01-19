@@ -1,13 +1,13 @@
 <view>
   <view class="search">
-    <v-search />
+    <v-search bind:publish="goPublish" bind:search="search"/>
   </view>
-  <view wx:for="{{squareList}}" wx:key="createdTime" class="squareItem" data-item="{{item}}" bindtap="goDetail">
-    <v-squareItem squareItem="{{item}}" bind:showComment="showComment" />
+  <view wx:for="{{squareList}}" wx:key="createdTime" class="squareItem">
+    <v-squareItem squareItem="{{item}}" bind:showComment="showComment" data-blogId="{{item._id}}" bindtap="goDetail"/>
   </view>
 </view>
 
 <view>
-  <v-comment modalShow="{{showComment}}"></v-comment>
+  <v-comment modalShow="{{showComment}}" bind:send="send"></v-comment>
   <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>

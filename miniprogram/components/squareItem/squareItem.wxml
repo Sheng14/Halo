@@ -5,7 +5,7 @@
     </view>
     <view class="nameAndTime">
       <view class="nickName">{{squareItem.nickName}}</view>
-      <view class="time">{{squareItem.createdTime}}</view>
+      <view class="time">{{_createTime}}</view>
     </view> 
   </view>
 

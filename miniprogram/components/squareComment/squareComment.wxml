@@ -12,7 +12,7 @@
         <text>{{item.content}}</text>
       </view>
       <view class="bottom">
-        <text>{{item.createdTime}}</text>
+        <text>{{item.createTime}}</text>
       </view>
     </view>
     
