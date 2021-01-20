@@ -22,6 +22,18 @@ exports.main = async (event, context) => {
         return res
       })
   })
+
+  const wxContext = cloud.getWXContext()
+
+  app.router('getSubjectByOpenid', async(ctx, next) => {
+    ctx.body = await db.collection('subjectList-collect').where({
+      _openid:wxContext.OPENID
+    }).skip(event.start).limit(event.count).orderBy('createTime', 'desc').get()
+    .then((res) => {
+      return res.data
+    })
+  })
+
   return app.serve()
 
  /* return {

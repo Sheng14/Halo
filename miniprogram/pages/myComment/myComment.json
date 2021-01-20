@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "我的评论",
   "usingComponents": {
-    "v-squareItem": "/components/squareItem/squareItem"
+    "v-squareComment": "/components/squareComment/squareComment"
   }
 }

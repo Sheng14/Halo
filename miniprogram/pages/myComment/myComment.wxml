@@ -1,5 +1,3 @@
 <view>
-  <view wx:for="{{myCommentList}}" wx:key="createdTime" class="squareItem">
-    <v-squareItem squareItem="{{item}}"/>
-  </view>
+    <v-squareComment squareItem="{{myCommentList}}"/>
 </view>

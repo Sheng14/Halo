@@ -15,3 +15,17 @@
 <view>
   <v-login modalShow="{{showLogin}}" bind:loginsuccess="onLoginSuccess" bind:loginfail="onLoginFail"></v-login>
 </view>
+
+<view class="model" wx:if="{{showRecord}}">
+  <view class="main">
+    <view class="record">
+      <textarea placeholder="请输入反馈..." maxlength="40" bindinput="onInput"></textarea>
+    </view>
+    <view>
+      <button class="push" bindtap="pushRecord">提交反馈</button>
+    </view>
+    <view>
+      <button class="push" catchtap="closeModel">关闭</button>
+    </view>
+  </view>
+</view>

@@ -64,6 +64,9 @@ Page({
       this.setData({
         showComment: false
       })
+      content = ''
+      e.detail.content = ''
+      this._getDetailList()
     })
     .catch((error) => {
       wx.hideLoading()

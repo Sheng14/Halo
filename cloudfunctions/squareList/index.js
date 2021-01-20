@@ -68,6 +68,15 @@ exports.main = async (event, context) => {
     })
   })
 
+  app.router('getCommentByOpenid', async(ctx, next) => { // 按照openid给出对应的评论列表
+    ctx.body = await db.collection('squareList-comment').where({
+      _openid:wxContext.OPENID
+    }).skip(event.start).limit(event.count).orderBy('createTime', 'desc').get()
+    .then((res) => {
+      return res.data
+    })
+  })
+
   return app.serve()
   return {
     event,

@@ -30,6 +30,7 @@ Page({
   },
   send (e) { // 发表评论
     let content = e.detail.content
+    console.log(content)
     if(content.trim() == ''){
       wx.showModal({
         title: '提示',
@@ -59,6 +60,9 @@ Page({
       this.setData({
         showComment: false
       })
+      content = ''
+      e.detail.content = ''
+      console.log(content)
     })
   },
   authorization () { // 鉴权
@@ -127,7 +131,7 @@ Page({
     })
     .then((res)=>{
       this.setData({
-        squareList:this.data.squareList.concat(res.result)//加载完就丢到我们的列表中合并
+        squareList:res.result//加载完就丢到我们的列表中合并
       })
       wx.hideLoading()
     })
@@ -164,7 +168,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this._loadSquareList()
   },
 
   /**

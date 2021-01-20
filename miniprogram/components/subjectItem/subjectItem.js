@@ -1,4 +1,6 @@
 // components/subjectItem/subjectItem.js
+const db = wx.cloud.database()
+let collectList = [] // 获取当前已经收藏的试题列表
 Component({
   /**
    * 组件的属性列表
@@ -8,7 +10,11 @@ Component({
       type: Object
     }
   },
-
+  lifetimes: { // 页面一进入就开始判断并且赋予组件对应的收藏状态
+    attached: function() {
+     this.controlCollect()
+    },
+  },
   /**
    * 组件的初始数据
    */
@@ -16,7 +22,8 @@ Component({
     isCollect: false, // 是否收藏
     collected: '../../images/star-clicked.png', // 收藏图片
     collect: '../../images/star-init.png',
-    showModel: false // 是否展示答案弹框
+    showModel: false, // 是否展示答案弹框
+    userInfo: ''
   },
 
   /**
@@ -27,7 +34,6 @@ Component({
       this.setData({
         showModel: true
       })
-      console.log(1)
     },
     collect (e) { // 收藏试题
       wx.getSetting({ // 判断授权与否
@@ -39,6 +45,11 @@ Component({
                  userInfo: res.userInfo,
                  isCollect: !this.data.isCollect
                })
+               if (this.data.isCollect) {
+                 this.collectSubject()
+               } else {
+                 this.cancelSubject()
+               }
               }
             })
           } else { // 未授权时
@@ -47,6 +58,88 @@ Component({
             })
           }
         }
+      })
+    },
+    controlCollect () { // 判断当前试题是否被收藏
+      wx.showLoading({
+        title: '请稍候'
+      })
+      /*if (collectList.length === 0) {
+        wx.cloud.callFunction({
+          name: 'subjectList',
+          data: {
+            $url: 'getSubjectByOpenid',
+            start: 0,
+            count: 100
+          }
+        })
+        .then((res) => {
+          collectList = res.result
+        })
+      }*/
+      wx.cloud.callFunction({
+        name: 'subjectList',
+        data: {
+          $url: 'getSubjectByOpenid',
+          start: 0,
+          count: 20
+        }
+      })
+      .then((res) => {
+        collectList = res.result
+        let length = collectList.length
+        for(let i = 0; i < length; i++) {
+          if(collectList[i].collectId === this.properties.subjectItem._field) {
+            this.setData({
+              isCollect: true
+            })
+          }
+        }
+        console.log(this.data.isCollect)
+      })
+      wx.hideLoading()
+    },
+    collectSubject () { // 收藏试题
+      console.log('y')
+      db.collection('subjectList-collect').add({
+        data: {
+          ...this.data.userInfo,
+          collectId: this.properties.subjectItem._field,
+          collectAnswer: this.properties.subjectItem.answer,
+          collectTitle: this.properties.subjectItem.title,
+          collectCategory: this.properties.subjectItem.categoryType,
+          createTime: db.serverDate()
+        }
+      })
+      .then((res) => {
+        console.log(res)
+        wx.showToast({
+          title: '收藏成功！',
+        })
+        this.controlCollect()
+      })
+    },
+    cancelSubject () { // 取消收藏！
+      console.log('n')
+      console.log(this.properties.subjectItem)
+      let deleteId = ''
+      for (let i = 0; i < collectList.length; i++) {
+        if(collectList[i].collectId === this.properties.subjectItem._field) {
+          deleteId = collectList[i]._id
+        }
+      }
+      db.collection('subjectList-collect').doc(deleteId).remove({
+        success: ((res) => {
+          wx.showToast({
+            title: '取消收藏成功！'
+          })
+        }),
+        fail: ((error) => {
+          wx.showToast({
+            title: '取消收藏失败！',
+            icon: 'none'
+          })
+        })
       })
     },
     onLoginSuccess (e) { // 登录成功关闭弹框

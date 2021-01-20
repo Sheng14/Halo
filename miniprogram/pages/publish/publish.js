@@ -46,6 +46,9 @@ Page({
         wx.navigateBack({
           delta: 1,
         })
+        const pages=getCurrentPages()//拿到当前经过的所有页面（只有两个）
+        const prepage=pages[pages.length-2]//取到上一个页面也就是square
+        prepage.onPullDownRefresh()//调用上一个页面的下拉刷新函数，实现发布后页面刷新
       })
     } else {
       wx.showToast({

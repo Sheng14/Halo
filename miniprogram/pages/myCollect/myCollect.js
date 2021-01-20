@@ -12,7 +12,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCollectList()
+  },
+  getCollectList () { // 获取我的收藏列表
+    wx.cloud.callFunction({
+      name: 'subjectList',
+      data: {
+        $url: 'getSubjectByOpenid',
+        start: 0,
+        count: 20
+      }
+    })
+    .then((res) => {
+      let list = res.result
+      let length = res.result.length
+      let collectList = []
+      for(let i = 0; i < length; i++) {
+        collectList.push({
+          title: list[i].collectTitle,
+          categoryType: list[i].collectCategory,
+          answer: list[i].collectAnswer,
+          _field: list[i].collectId
+        })
+      }
+      this.setData({
+        collectList: collectList
+      })
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -25,7 +51,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getCollectList()
   },
 
   /**

@@ -1,4 +1,5 @@
 // components/profileAction/profileAction.js
+let content = '' //反馈内容
 Component({
   /**
    * 组件的属性列表
@@ -11,6 +12,7 @@ Component({
    * 组件的初始数据
    */
   data: {
+    showRecord: false,
     actionList: [ // 用户行为
       {
         img: '../../images/collect.png',
@@ -46,16 +48,20 @@ Component({
                this.setData({
                  userInfo: res.userInfo
                })
-               console.log(this.data.userInfo)
                this._go(action)
               }
             })
           } else { // 未授权时
             this.setData({
               showLogin: true
-            })
+            })  
           }
         }
+      })
+    },
+    closeModel () {
+      this.setData({
+        showRecord: false
       })
     },
     _go (action) { // 跳转位置
@@ -72,11 +78,44 @@ Component({
           url: '/pages/myComment/myComment',
         })
       } else {
+        console.log('1')
+        this.setData({
+          showRecord: true
+        })
+      }
+    },
+    onInput (e) { // 监听输入的反馈内容
+      content = e.detail.value
+      if (content.length >= 40) {
         wx.showToast({
-          title: '已经反馈',
+          title: '达到最大字数',
           icon: 'none'
         })
       }
+    },
+    pushRecord () { // 提交反馈
+      if (content.trim() == '') {
+        wx.showToast({
+          title: '输入内容不能为空',
+          icon: 'none'
+        })
+        return
+      }
+      const db = wx.cloud.database()
+      db.collection('recordList').add({
+        data: {
+          ...this.data.userInfo,
+          content,
+          createTime: db.serverDate()
+        }
+      }).then((res) => {
+        wx.showToast({
+          title: '提交成功！',
+        })
+        this.setData({
+          showRecord: false
+        })
+      })
     },
     onLoginSuccess (e) { // 登录成功关闭弹框
       this.setData({
