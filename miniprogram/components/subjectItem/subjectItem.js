@@ -95,7 +95,6 @@ Component({
             })
           }
         }
-        console.log(this.data.isCollect)
       })
       wx.hideLoading()
     },
@@ -116,7 +115,6 @@ Component({
         wx.showToast({
           title: '收藏成功！',
         })
-        this.controlCollect()
       })
     },
     cancelSubject () { // 取消收藏！
